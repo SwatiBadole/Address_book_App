@@ -21,21 +21,21 @@ class Contact {
   
     get phoneNumber() {
       return this._phoneNumber;
-    }
-    set phoneNumber(phoneNumber) {
+      }
+      set phoneNumber(phoneNumber) {
       let phoneNumberRegex = RegExp("^[0-9]{2}\\s{1}[7-9]{1}[0-9]{9}$");
       if (phoneNumberRegex.test(phoneNumber)) {
-        this._phoneNumber = phoneNumber;
+          this._phoneNumber = phoneNumber;
       } else {
-        throw "Phone Number is Invalid!";
+          throw "Phone Number is Invalid!";
       }   
-    }
+      }
   
     get address() {
       return this._address;
     }
     set address(address) {
-      let addressRegex = RegExp('^[a-zA-Z0-9#,&]\\s{4,}$');
+      let addressRegex = RegExp("^[a-zA-Z]{1}[a-zA-Z\\s]{2,}$");
       if (addressRegex.test(address)) {
         this._address = address;
       } else {
@@ -68,9 +68,16 @@ class Contact {
         throw "Zip is Invalid!";
       }
     }
-  
-    toString(){
-        return `id ${this.id} \nName ${this.name} \nPhone Number ${this.phoneNumber} \nAddress ${this.address} \nCity ${this.city} \nState ${this.state} \nZip  ${this.zip}`;
+    
+        
+      toString(){
+        return `id ${this.id} 
+        \nName ${this.name} 
+        \nPhone Number ${this.phoneNumber} 
+        \nAddress ${this.address} 
+        \nCity ${this.city} 
+        \nState ${this.state} 
+        \nZip  ${this.zip}`;
     }
   
   }
